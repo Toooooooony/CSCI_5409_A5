@@ -21,6 +21,7 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
   'POST /callback_url_egister': 'CallbackRegisterController.registerCallback',
+  'POST /send_employee_info' : 'EmployeeController.registerCallback',
 
 
   /***************************************************************************
