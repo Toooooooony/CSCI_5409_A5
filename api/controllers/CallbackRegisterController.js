@@ -1,5 +1,5 @@
 module.exports = {
-  testCallback: async function(req, res) {
+  registerCallback: async function(req, res) {
     var postData = req.body;
     var keywords = req.param('keywords');
     var callback = req.param('callback');

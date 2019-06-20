@@ -20,7 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-  'POST /test': 'TestWebhookController.testCallback',
+  'POST /callback_url_egister': 'CallbackRegisterController.registerCallback',
 
 
   /***************************************************************************
