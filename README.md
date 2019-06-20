@@ -26,5 +26,6 @@ Note:  Generators are usually run using the globally-installed `sails` CLI (comm
 
 ### Database
 adapter: require('sails-mysql'),
+
 url: 'mysql://root:857458804@34.73.69.175:3306/csci5409a5_MBR',
 
