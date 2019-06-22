@@ -3,7 +3,6 @@ module.exports = {
     var postData = req.body;
     var employeeID = req.param('employeeID');
 
-
     var reault = await Employee.find({
       id: employeeID
     });
