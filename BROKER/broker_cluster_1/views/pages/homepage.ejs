@@ -5,8 +5,8 @@ function validateForm()
   var address = document.getElementById('address').value;
   var phoneNumber = document.getElementById('contact no.').value;
   var employer = document.getElementById('employer').value;
-  var position = document.getElementById('position').value;
-  if (name == '' | address == '' | phoneNumber == '' | employer == '' | position == '' ) 
+  // var position = document.getElementById('position').value;
+  if (name == '' | address == '' | phoneNumber == '' | employer == '') 
   {
     alert("Please enter valid value")
   }
@@ -14,7 +14,7 @@ function validateForm()
   {
     $.ajax({
 
-// url: "https://protected-retreat-23468.herokuapp.com/CalcBMI/calBmiCalc467",
+// url: "https://prod-26.canadaeast.logic.azure.com:443/workflows/506b1a7419724ecb9e3b7785c6faacd5/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=6zHGFWJPn0BJV1_lWe-3GmTzc_kW0cykka5h044YjzE",
 // type: "POST",
 // data: { 'height': height, 'weight': weight },
 // dataType: 'json',
@@ -27,6 +27,14 @@ function validateForm()
   } 
 }
 </script>
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">MBR Mortgage  </a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
 
 <form name="mortgage form" onsubmit="validateForm()" method="post">
 <div class="container">
@@ -41,21 +49,34 @@ function validateForm()
       <input type="address" class="form-control" id="address" placeholder="Enter Address" name="address">
     </div>
     <div class="form-group">
-        <label for="phonenumber">Contact No:</label>
+        <label for="phonenumber">Phone No:</label>
         <input type="number" class="form-control" id="contact no." placeholder="Enter Contact No." name="contact No." >
       </div>
       <div class="form-group">
       <label for="employer">Employer Name:</label>
       <input type="name" class="form-control" id="employer" placeholder="Enter Employer Name" name="employer">
     </div>
+    <!-- <div class="form-group">
+      <label for="empid">Employee Id:</label>
+      <input type="id" class="form-control" id="empid" placeholder="Enter Employee Id" name="empid">
+    </div> -->
     <div class="form-group">
-      <label for="position">Position:</label>
-      <input type="name" class="form-control" id="position" placeholder="Enter Position" name="position">
-    </div>
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter Email address">
+      </div>
     </form>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
 
 
+<footer class="page-footer font-small blue">
 
+    
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="homepage.ejs"> Team 8 Assignment Cloud Computing</a>
+    </div>
+
+  
+  </footer>
+ 
