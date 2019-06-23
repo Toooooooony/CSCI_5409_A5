@@ -1,8 +1,7 @@
 module.exports = {
-  registerCallback: async function(req, res) {
+  sendEmployeeInfo: async function(req, res) {
     var postData = req.body;
     var employeeID = req.param('employeeID');
-
 
     var reault = await Employee.find({
       id: employeeID
