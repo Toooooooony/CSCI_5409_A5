@@ -29,3 +29,8 @@ adapter: require('sails-mysql'),
 
 url: 'mysql://root:857458804@34.73.69.175:3306/csci5409a5_MBR',
 
+
+###Reference
+Employer logo：
+https://theemployer.biz/img/the-employer-logo.svg
+
