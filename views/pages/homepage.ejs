@@ -48,10 +48,10 @@
         document.getElementById("loginForm").innerHTML = "<b>Employee Name: <br> <input type=\"text\" placeholder=\"First name\" id=\'firstName\' required /> <br><input type=\"text\" placeholder=\"Last name\"  id=\'lastName\' required/> <br> Employee ID: <br><input type=\"text\" placeholder=\"Employee ID\"  id=\'employeeID\' required/> <br><button type=\"button\" class=\"btn btn-success\" onclick=\"login()\">Login</button>";
       } else if (key == 2) {
         img.src = "/images/contactUS.png";
-        document.getElementById("loginForm").innerHTML = "<b>Content<br><textarea row=\"25\" cols=\"25\" style=\"resize:none;\"></textarea> <br> <button type=\"button\" class=\"btn btn-primary\">Submit</button>";
+        document.getElementById("loginForm").innerHTML = "<b>Content<br><textarea row=\"25\" cols=\"25\" style=\"resize:none;\"></textarea> <br> <button type=\"button\" class=\"btn btn-primary\" onclick=\"goToMessageSent()\">Submit</button>";
       } else {
         img.src = "/images/reportIssue.PNG";
-        document.getElementById("loginForm").innerHTML = "<b>Content<br><textarea row=\"25\" cols=\"25\" style=\"resize:none;\"></textarea> <br> <button type=\"button\" class=\"btn btn-warning\">Report</button>";
+        document.getElementById("loginForm").innerHTML = "<b>Content<br><textarea row=\"25\" cols=\"25\" style=\"resize:none;\"></textarea> <br> <button type=\"button\" class=\"btn btn-warning\" onclick=\"goToMessageSent()\">Report</button>";
       }
     }
 
@@ -70,7 +70,11 @@
       }
       var message = "{\"firstName\":" + firstName + ",\"lastName\":" + lastName + ",\"employeeID\":" + employeeID + "}";
       //httpRequest.send(message);
-      window.location.href ='/employee';
+      window.location.href = '/employee';
+    }
+
+    function goToMessageSent() {
+      window.location.href = '/message_sent';
     }
   </script>
 
