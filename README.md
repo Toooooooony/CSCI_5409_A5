@@ -34,10 +34,13 @@ url: 'mysql://root:857458804@34.73.69.175:3306/csci5409a5_MBR',
 #### Employer UI
 Employer logo：
 https://theemployer.biz/img/the-employer-logo.svg
+
 Login:
 https://achieve.lausd.net/cms/lib/CA01000043/Centricity/domain/779/welligentbuttons/login.png
+
 Contact US:
 https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq0b2oGCsInuK27WNLucr7P5h-Nzjr2_0fles6QBsTR8qYXtX1
+
 Report issue:
 https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG8rJ-NSzzbmOg2CjU_qrLD8eyVyQ6DFt1LtaDXBM9EprDc0tVIg
 
