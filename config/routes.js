@@ -20,6 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
+  '/employee': { view: 'pages/employeePage' },
   'POST /callback_url_egister': 'CallbackRegisterController.registerCallback',
   'POST /send_employee_info' : 'EmployeeController.sendEmployeeInfo',
 

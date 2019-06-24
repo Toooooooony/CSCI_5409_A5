@@ -45,7 +45,7 @@
         img.src = "/images/login.png";
         img.width = '180';
         img.height = '180';
-        document.getElementById("loginForm").innerHTML = "<b>Employee Name: <br> <input type=\"text\" placeholder=\"First name\" id=\'firstName\' required /> <br><input type=\"text\" placeholder=\"Last name\"  id=\'firstName\' required/> <br> Employee ID: <br><input type=\"text\" placeholder=\"Employee ID\"  id=\'employeeID\' required/> <br><button type=\"button\" class=\"btn btn-success\" onlick=\"login()\">Login</button>";
+        document.getElementById("loginForm").innerHTML = "<b>Employee Name: <br> <input type=\"text\" placeholder=\"First name\" id=\'firstName\' required /> <br><input type=\"text\" placeholder=\"Last name\"  id=\'lastName\' required/> <br> Employee ID: <br><input type=\"text\" placeholder=\"Employee ID\"  id=\'employeeID\' required/> <br><button type=\"button\" class=\"btn btn-success\" onclick=\"login()\">Login</button>";
       } else if (key == 2) {
         img.src = "/images/contactUS.png";
         document.getElementById("loginForm").innerHTML = "<b>Content<br><textarea row=\"25\" cols=\"25\" style=\"resize:none;\"></textarea> <br> <button type=\"button\" class=\"btn btn-primary\">Submit</button>";
@@ -62,7 +62,7 @@
       // send weight and heiget values to backend
       var httpRequest = new XMLHttpRequest();
       // httpRequest.open('POST', 'http://127.0.0.1:1337/something', true);
-      httpRequest.setRequestHeader('Content-Type', 'application/json');
+      // httpRequest.setRequestHeader('Content-Type', 'application/json');
       //callback function with BMI and suggestion
       httpRequest.onload = function () {
         var result = httpRequest.responseText;
@@ -70,6 +70,7 @@
       }
       var message = "{\"firstName\":" + firstName + ",\"lastName\":" + lastName + ",\"employeeID\":" + employeeID + "}";
       //httpRequest.send(message);
+      window.location.href ='/employee';
     }
   </script>
 
