@@ -45,7 +45,7 @@
         img.src = "/images/login.png";
         img.width = '180';
         img.height = '180';
-        document.getElementById("loginForm").innerHTML = "<b>Employee Name: <br> <input type=\"text\" name=\"first name\"> <br><input type=\"text\" name=\"last name\"> <br> Employee ID: <br><input type=\"text\" name=\"Employee ID\"> <br><button type=\"button\" class=\"btn btn-success\">Login</button>";
+        document.getElementById("loginForm").innerHTML = "<b>Employee Name: <br> <input type=\"text\" placeholder=\"First name\" id=\'firstName\' required /> <br><input type=\"text\" placeholder=\"Last name\"  id=\'firstName\' required/> <br> Employee ID: <br><input type=\"text\" placeholder=\"Employee ID\"  id=\'employeeID\' required/> <br><button type=\"button\" class=\"btn btn-success\" onlick=\"login()\">Login</button>";
       } else if (key == 2) {
         img.src = "/images/contactUS.png";
         document.getElementById("loginForm").innerHTML = "<b>Content<br><textarea row=\"25\" cols=\"25\" style=\"resize:none;\"></textarea> <br> <button type=\"button\" class=\"btn btn-primary\">Submit</button>";
@@ -54,26 +54,25 @@
         document.getElementById("loginForm").innerHTML = "<b>Content<br><textarea row=\"25\" cols=\"25\" style=\"resize:none;\"></textarea> <br> <button type=\"button\" class=\"btn btn-warning\">Report</button>";
       }
     }
+
+    function login() {
+      var firstName = document.getElementById('firstName').value;
+      var lastName = document.getElementById('lastName').value;
+      var employeeID = document.getElementById('employeeID').value;
+      // send weight and heiget values to backend
+      var httpRequest = new XMLHttpRequest();
+      // httpRequest.open('POST', 'http://127.0.0.1:1337/something', true);
+      httpRequest.setRequestHeader('Content-Type', 'application/json');
+      //callback function with BMI and suggestion
+      httpRequest.onload = function () {
+        var result = httpRequest.responseText;
+        //jump to profile page
+      }
+      var message = "{\"firstName\":" + firstName + ",\"lastName\":" + lastName + ",\"employeeID\":" + employeeID + "}";
+      //httpRequest.send(message);
+    }
   </script>
 
-
-  <!-- <div id="selectBar"></div>
-	<div style="text-align:center;float:left">
-		<div id="map" style="width:80%; height:80%"></div>
-	</div>
-	<div style="text-align:center;float:left">
-		<div id="barChart" style="width:80%; height:80%"></div>
-		<div id="cirChart" style="width:80%; height:80%"></div>
-	</div> -->
-
-  <!-- <div id="map"></div> -->
-  <!-- <div id='chart1'></div> -->
-  <!-- <div id="chart1"></div> -->
-
-
-
-  <!-- <script type="text/javascript" src="canada_map.js"></script> -->
-  <!-- <script type="text/javascript" src="index.js"></script> -->
 </body>
 
 </html>
