@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <img src="/images/EmployerLogo.PNG" style="display: block;margin: 0 auto;" /><br><br>
+
+    <div class="form-group row justify-content-center">
+        <b>Mortgage Applciaton Number: <br>
+            <input type="text" placeholder="123456..." id='ApplciatonNumber' required /> <br>
+            First Name: <br>
+            <input type="text" placeholder="First name" id='firstName' required /> <br>
+            Last Name: <br>
+            <input type="text" placeholder="Last name" id='lastName' required /> <br>
+            <button type="button" class="btn btn-success" onclick="agree()">Agree</button>
+            <button type="button" class="btn btn-danger" onclick="cancel()">Cancel</button>
+
+    </div>
+
+    <script>
+        function agree() {
+
+            //TODO: send agreement to broker.
+
+        }
+
+        function cancel() {
+            window.location.href = '/';
+        }
+
+    </script>
+
+</body>
+
+</html>
