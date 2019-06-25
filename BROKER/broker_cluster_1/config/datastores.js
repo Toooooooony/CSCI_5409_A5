@@ -50,6 +50,11 @@ module.exports.datastores = {
     ***************************************************************************/
     // adapter: 'sails-mysql',
     // url: 'mysql://user:password@host:port/database',
+    // adapter: "sails-mysql",
+    // host: "broker.mysql.database.azure.com",
+    // user: "broker@broker",
+    // password: "pass@123",
+    // database: "broker"
 
   },
 
