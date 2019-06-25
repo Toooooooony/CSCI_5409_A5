@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CSCI5409-A5</title>
 
-    <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <title>CSCI5409-A5</title>
 
-    <%/* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
-    <%/* <meta name="robots" content="noindex"> */%>
+  <!-- Viewport mobile tag for sensible mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <%/* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
+  <%/* <meta name="robots" content="noindex"> */%>
 
 
-    <!--
+  <!--
         Stylesheets and Preprocessors
         ==============================
 
@@ -30,19 +31,29 @@
             + Import stylesheets from other directories
             + Use a different or additional preprocessor, like SASS, SCSS or Stylus
     -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--STYLES-->
+  <link rel="stylesheet" href="/styles/empolyer.css">
+  <link rel="stylesheet" href="/styles/importer.css">
+  <link rel="stylesheet" href="/styles/index.css">
+  <link rel="stylesheet" href="/styles/login.css">
+  <link rel="stylesheet" href="/styles/mortgage.css">
+  <!--STYLES END-->
+ 
+</head>
 
-    <!--STYLES-->
-    <link rel="stylesheet" href="/styles/empolyer.css">
-    <link rel="stylesheet" href="/styles/importer.css">
-    <!--STYLES END-->
-  </head>
+<body>
+  <!-- refer to https://getbootstrap.com/docs/4.0/components/navbar/ -->
+  <nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-center">
+    <a class="navbar-brand font-weight-bold" href="#"><span class="mb-0  display-2 " id="employee">Employee Service</span></a>
 
-  <body>
-    <%- body %>
-
+  </nav>
+  <%- body %>
 
 
-    <!--
+
+  <!--
         Client-side Templates
         ========================
 
@@ -63,12 +74,12 @@
               stringfile before they're served.
     -->
 
-    <!--TEMPLATES-->
-    
-    <!--TEMPLATES END-->
+  <!--TEMPLATES-->
+  
+  <!--TEMPLATES END-->
 
 
-    <!--
+  <!--
         Server-side View Locals
         ========================
 
@@ -84,7 +95,7 @@
     -->
 
 
-    <!--
+  <!--
 
       Client-side Javascript
       ========================
@@ -106,11 +117,15 @@
           + Use a different preprocessor, like TypeScript
 
     -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+  <!--SCRIPTS-->
+  <script src="/dependencies/sails.io.js"></script>
+  <!--SCRIPTS END-->
 
-    <!--SCRIPTS-->
-    <script src="/dependencies/sails.io.js"></script>
-    <script src="/js/home.js"></script>
-    <script src="/js/sendInfo.js"></script>
-    <!--SCRIPTS END-->
-  </body>
+</body>
+
 </html>

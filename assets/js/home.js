@@ -7,7 +7,7 @@ function swithImgs(key, button) {
     img.src = "/images/login.png";
     img.width = '180';
     img.height = '180';
-    document.getElementById("loginForm").innerHTML = "<b>Employee Name: <br> <input type=\"text\" placeholder=\"First name\" id=\'firstName\' required /> <br><input type=\"text\" placeholder=\"Last name\"  id=\'lastName\' required/> <br> Employee ID: <br><input type=\"text\" placeholder=\"Employee ID\"  id=\'employeeID\' required/> <br><button type=\"button\" class=\"btn btn-success\" onclick=\"login()\">Login</button>";
+    document.getElementById("loginForm").innerHTML = "<b>Employee Name: <br> <input type=\"text\" placeholder=\"Name\" id=\'name\' required /> <br><input type=\"text\" placeholder=\"Password\"  id=\'password\' required/> <br> Employee ID: <br><input type=\"text\" placeholder=\"Employee ID\"  id=\'employeeID\' required/> <br><button type=\"button\" class=\"btn btn-success\" onclick=\"login()\">Login</button>";
   } else if (key == 2) {
     img.src = "/images/contactUS.png";
     document.getElementById("loginForm").innerHTML = "<b>Content<br><textarea row=\"25\" cols=\"25\" style=\"resize:none;\"></textarea> <br> <button type=\"button\" class=\"btn btn-primary\" onclick=\"goToMessageSent()\">Submit</button>";
@@ -18,21 +18,32 @@ function swithImgs(key, button) {
 }
 
 function login() {
-  var firstName = document.getElementById('firstName').value;
-  var lastName = document.getElementById('lastName').value;
+  var name = document.getElementById('name').value;
+  var password = document.getElementById('password').value;
   var employeeID = document.getElementById('employeeID').value;
-  // send weight and heiget values to backend
-  var httpRequest = new XMLHttpRequest();
-  // httpRequest.open('POST', 'http://127.0.0.1:1337/something', true);
-  // httpRequest.setRequestHeader('Content-Type', 'application/json');
-  //callback function with BMI and suggestion
-  httpRequest.onload = function () {
-    var result = httpRequest.responseText;
-    //jump to profile page
+
+  if (name != '' && password != '' && employeeID != '') {
+    // send request
+    var url = "http://localhost:1337/authenticate";
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    // set the request
+    xhr.send(`{"name":"${name}","password":"${password}","employeeID":"${employeeID}"}`);
+    //handle return result
+    xhr.onload = function () {
+      var result = xhr.responseText;
+      console.log(JSON.parse(result));
+      //jump to profile page
+      //  window.location.href = '/employee';
+    }
+  }else{
+    alert("please submit valid input");
   }
-  var message = "{\"firstName\":" + firstName + ",\"lastName\":" + lastName + ",\"employeeID\":" + employeeID + "}";
+
+  // var message = "{\"firstName\":" + firstName + ",\"lastName\":" + lastName + ",\"employeeID\":" + employeeID + "}";
   //httpRequest.send(message);
-  window.location.href = '/employee';
+  // window.location.href = '/employee';
 }
 
 function goToMessageSent() {

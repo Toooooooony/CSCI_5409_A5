@@ -19,11 +19,16 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
-  '/employee': { view: 'pages/employeePage' },
-  '/message_sent': { view: 'pages/messageSentPage(dummy)' },
+  '/login': { view: 'pages/login' },
+  '/': { view: 'pages/index'  },
+   '/mortgage': {
+     view: 'pages/mortgage'
+   },
+  // '/employee': { view: 'pages/employeePage' },
+  // '/message_sent': { view: 'pages/messageSentPage(dummy)' },
   'POST /callback_url_egister': 'CallbackRegisterController.registerCallback',
   'POST /send_employee_info' : 'EmployeeController.sendEmployeeInfo',
+  'POST /authenticate': 'EmployeeLoginController.authenticateEmployeeInfo',
 
 
   /***************************************************************************

@@ -50,8 +50,8 @@ module.exports.datastores = {
     ***************************************************************************/
     // adapter: 'sails-mysql',
     // url: 'mysql://user:password@host:port/database',
-    // adapter: require('sails-mysql'),
-    // url: 'mysql://root:857458804@34.73.69.175:3306/csci5409a5_Employer',
+    adapter: require('sails-mysql'),
+    url: 'mysql://root:857458804@34.73.69.175:3306/csci5409a5_Employer',
 
   },
 
