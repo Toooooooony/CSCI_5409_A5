@@ -29,7 +29,6 @@ module.exports = {
     } else {
       var feedback = {
         'Result': 'No record in database'
-
       };
       console.log(feedback);
       return res.json(feedback);

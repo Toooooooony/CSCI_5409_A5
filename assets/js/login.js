@@ -18,10 +18,12 @@
        //handle return result
        xhr.onload = function () {
          var result = xhr.responseText;
-         console.log(JSON.parse(result));
+         console.log(JSON.parse(result)['Result']);
          //jump to profile page
+         if(JSON.parse(result)['Result'] == 'Successfully'){
           window.location.href = '/mortgage';
           localStorage.setItem("employeeID", employeeID.value);
+         }
        }
      } else {
        alert("please submit valid input");
