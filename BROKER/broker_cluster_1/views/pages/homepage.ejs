@@ -5,6 +5,7 @@ function validateForm()
   var address = document.getElementById('address').value;
   var phoneNumber = document.getElementById('contact no.').value;
   var employer = document.getElementById('employer').value;
+  var email = document.getElementById('email').value;
   // var position = document.getElementById('position').value;
   if (name == '' | address == '' | phoneNumber == '' | employer == '') 
   {
@@ -14,15 +15,15 @@ function validateForm()
   {
     $.ajax({
 
-// url: "https://prod-26.canadaeast.logic.azure.com:443/workflows/506b1a7419724ecb9e3b7785c6faacd5/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=6zHGFWJPn0BJV1_lWe-3GmTzc_kW0cykka5h044YjzE",
-// type: "POST",
-// data: { 'height': height, 'weight': weight },
-// dataType: 'json',
-// success: function (result1) {
-//   console.log(result1);
-//   $('.p1').html("BMI is" + result1['BMI'].toFixed(2));
-//   $('.div1').show();
-
+  url: "https://prod-27.australiaeast.logic.azure.com:443/workflows/f29aa52343f54acfb16833372cd48d95/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=hwVT_-XklmgKNLi1hy5upLZLSocOOntE2weZI7vCZK8",
+  type: "POST",
+  data: { 'name': name, 'address': address, 'email': email },
+  dataType: 'json',
+  success: function (result1) {
+    console.log(result1);
+    $('.p1').html("BMI is" + result1['BMI'].toFixed(2));
+    $('.div1').show();
+  }
 })
   } 
 }
@@ -56,10 +57,6 @@ function validateForm()
       <label for="employer">Employer Name:</label>
       <input type="name" class="form-control" id="employer" placeholder="Enter Employer Name" name="employer">
     </div>
-    <!-- <div class="form-group">
-      <label for="empid">Employee Id:</label>
-      <input type="id" class="form-control" id="empid" placeholder="Enter Employee Id" name="empid">
-    </div> -->
     <div class="form-group">
         <label for="email">Email address:</label>
         <input type="email" class="form-control" id="email" placeholder="Enter Email address">
