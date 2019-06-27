@@ -5,8 +5,6 @@ var agree = document.getElementById("agree");
 var submit = document.getElementById("submit");
 var employeeID = localStorage.getItem('employeeID');
 
-employee.innerHTML = "Mortgage Support";
-
 submit.addEventListener('click', function() {
   var api = 'send_employee_info';
   var url = `${window.location.origin}/${api}`;
