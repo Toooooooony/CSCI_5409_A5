@@ -7,7 +7,7 @@ login.addEventListener('click', function() {
   console.log("id---" + employeeID.value);
   if (password.value != '' && employeeID.value != '') {
     // send request
-    var url = "http://localhost:1337/authenticate";
+    var url = `${window.location.origin}/authenticate`;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
