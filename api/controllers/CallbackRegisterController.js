@@ -17,6 +17,8 @@ module.exports = {
     myData.employeeID = newCallback.employeeID;
     jsonData = JSON.stringify(myData);
 
+    sails.log.info("success! New add callback for " + newCallback.name);
+
     return res.json(jsonData);
   }
 };
