@@ -14,7 +14,16 @@ module.exports = {
             res.status(200);
             res.json(songs);
         });
+    },
+    findbyid: async function (req, res, next) {
+        var id = req.param('id');
+        var email = req.param('email');
+        var result = await Brokercustomer.find({
+            id: id,
+            email: email
+        });
+        res.status(200);
+        res.json(result);
     }
-
 };
 

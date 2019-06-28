@@ -9,10 +9,11 @@ function validateForm()
   // var position = document.getElementById('position').value;
   if (name == '' | address == '' | phoneNumber == '' | employer == '') 
   {
-    alert("Please enter valid value")
+    alert("Please enter valid value");
   }
   else
   {
+    alert("Success! Your application is in process!");
     $.ajax({
 
   url: "http://localhost:1337/newbroker",
@@ -36,10 +37,12 @@ function validateForm()
 
 <nav class="navbar navbar-light bg-light justify-content-between">
     <a class="navbar-brand">MBR Mortgage  </a>
-    
+    <a href="/status">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button">Check Status</button>
+    </a>
   </nav>
 
-<form name="mortgage form" onsubmit="validateForm()" method="post">
+<form name="mortgage form" onsubmit="validateForm()">
 <div class="container">
   <h1 style="text-align: center">Mortgage Form</h1>
  

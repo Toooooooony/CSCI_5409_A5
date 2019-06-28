@@ -1,0 +1,48 @@
+<script>
+function checkStatus(){
+    var app_id = document.getElementById('app_id').value;
+    var email = document.getElementById('email').value;
+    var status ,data;
+    if (app_id == '' || email == '') 
+  {
+    alert("Please enter valid value");
+  }
+  else
+  {
+    $.ajax({
+
+url: "http://localhost:1337/checkstatus?id="+app_id+"&email="+email,
+type: "GET",
+success: function (result) {
+  console.log(result);
+  if (result === undefined || result.length == 0) {
+    document.getElementById('status').innerHTML="No match found in records";
+}
+else{
+    status = result[0].status;
+  document.getElementById('status').innerHTML="Your application status is: "+status;
+  document.getElementById('email_id').innerHTML="Email: "+result[0].email;
+
+}
+  }
+})
+  }
+}
+</script>
+    
+    <div class="form-group">
+      <label for="Application id">Application id:</label>
+      <input type="numnber" class="form-control" id="app_id" placeholder="Enter Application id" name="app_id">
+    </div>
+    
+    <div class="form-group">
+            <label for="Application id">Email id:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email id" name="email">
+          </div>
+    <button type="button" class="btn btn-primary" onclick="checkStatus()">Check</button>
+    <div class="container">
+        <div>
+                <p id="status"></p>
+                <p id="email_id"></p>
+        </div>
+    </div>
