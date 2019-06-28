@@ -15,7 +15,8 @@ module.exports = {
     phone: 'Number',
     employer_name: 'string',
     salary: 'string',
-    job_duration: 'string'
+    job_duration: 'string',
+    status: 'string'
   },
 };
 
