@@ -15,14 +15,18 @@ function validateForm()
   {
     $.ajax({
 
-  url: "https://prod-27.australiaeast.logic.azure.com:443/workflows/f29aa52343f54acfb16833372cd48d95/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=hwVT_-XklmgKNLi1hy5upLZLSocOOntE2weZI7vCZK8",
+  url: "http://localhost:1337/newbroker",
   type: "POST",
-  data: { 'name': name, 'address': address, 'email': email },
+  data: { 
+    'name': name, 
+    'address': address, 
+    'email': email,
+    'phone': phoneNumber,
+    'employer_name': employer 
+  },
   dataType: 'json',
-  success: function (result1) {
-    console.log(result1);
-    $('.p1').html("BMI is" + result1['BMI'].toFixed(2));
-    $('.div1').show();
+  success: function (result) {
+    console.log(result);
   }
 })
   } 
@@ -31,10 +35,7 @@ function validateForm()
 
 <nav class="navbar navbar-light bg-light justify-content-between">
     <a class="navbar-brand">MBR Mortgage  </a>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    
   </nav>
 
 <form name="mortgage form" onsubmit="validateForm()" method="post">
