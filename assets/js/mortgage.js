@@ -7,9 +7,9 @@ var employeeID = localStorage.getItem('employeeID');
 
 submit.addEventListener('click', function() {
   var api = 'send_employee_info';
+  var aid = applicationID.value;
   var url = `${window.location.origin}/${api}`;
-  io.socket.post(url, {employeeID: employeeID} , function(resData, jwres) {
+  io.socket.post(url, {employeeID: employeeID, applicationID: aid} , function(resData, jwres) {
     console.log(url);
   });
-
 });

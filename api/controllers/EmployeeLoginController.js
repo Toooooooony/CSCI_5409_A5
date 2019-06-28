@@ -23,14 +23,12 @@ module.exports = {
           'Result': 'Invalid Password'
         };
       }
-      console.log(feedback);
       return res.json(feedback);
     } else {
       sails.log.info("Login fail - user not found");
       var feedback = {
         'Result': 'No record in database'
       };
-      console.log(feedback);
       return res.json(feedback);
     }
   }
