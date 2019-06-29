@@ -20,6 +20,35 @@ success: function (result) {
 }
 else{
     status = result[0].status;
+    if(status=='Pending'){
+        $.ajax({
+            url: "https://prod-13.canadacentral.logic.azure.com:443/workflows/a0b3202275be45f4a524a7a0d8d88cd6/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=U-nvQHS97chsJ0mxjLtg5qPMB3-Wrq1y2w-Ye5xm9Qo",
+            type: "POST",
+            'dataType': 'json',
+            'contentType': 'application/json',
+            processData: false,
+            'data':JSON.stringify( {
+                "applicationID": app_id,
+                "name":  result[0].name,
+                "email":  result[0].email
+            }),
+            success: function(data){
+                console.log(data);
+                $.ajax({
+                    url: "http://localhost:1337/updatevalues?id="+app_id+"&salary="+data.salary+"&job_duration="+data.job_duration, 
+                    type: "PUT",
+                    success: function (result) {
+                        console.log(result);
+                        alert("Status updated!");
+                    }
+                })
+            },
+            timeout: 30000,
+            error: function() {
+                alert("Please agree to send your information from your Employee portal!");        
+            }
+                    });
+                }
   document.getElementById('status').innerHTML="Your application status is: "+status;
   document.getElementById('email_id').innerHTML="Email: "+result[0].email;
 

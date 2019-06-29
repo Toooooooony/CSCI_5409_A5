@@ -13,7 +13,7 @@ function validateForm()
   }
   else
   {
-    alert("Success! Your application is in process!");
+    // alert("Success! Your application is in process!");
     $.ajax({
 
   url: "http://localhost:1337/newbroker",
@@ -29,6 +29,7 @@ function validateForm()
   dataType: 'json',
   success: function (result) {
     console.log(result);
+    alert("Your request has been generated! Your application number is "+result.id);
   }
 })
   } 
@@ -42,7 +43,7 @@ function validateForm()
     </a>
   </nav>
 
-<form name="mortgage form" onsubmit="validateForm()">
+<form name="mortgage form" >
 <div class="container">
   <h1 style="text-align: center">Mortgage Form</h1>
  
@@ -67,7 +68,7 @@ function validateForm()
         <input type="email" class="form-control" id="email" placeholder="Enter Email address">
       </div>
     </form>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-primary" onclick="validateForm()">Submit</button>
   </form>
 </div>
 

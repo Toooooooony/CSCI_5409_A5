@@ -22,7 +22,8 @@ module.exports.routes = {
   '/': { view: 'pages/homepage' },
   '/status': { view: 'pages/status' },
   'post /newbroker': 'BrokercustomerController.create',
-  'get /checkstatus': 'BrokercustomerController.findbyid'
+  'get /checkstatus': 'BrokercustomerController.findbyid',
+  'put /updatevalues': 'BrokercustomerController.updatebyid'
 
 
   /***************************************************************************
