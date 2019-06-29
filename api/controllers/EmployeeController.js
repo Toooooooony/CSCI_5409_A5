@@ -5,9 +5,9 @@ module.exports = {
     var applicationID = req.param('applicationID');
 
     var reault = await Employee.find({
-      id: employeeID
+      id: employeeID,
     });
-    
+
     var myData = {};
     var jsonData;
     myData.name = reault[0]['name'];
@@ -21,7 +21,8 @@ module.exports = {
     } else {
 
       var callback_info = await Callback.find({
-        id: employeeID
+        id: employeeID,
+        applicationID: applicationID
       });
 
       var request = require('request');

@@ -4,20 +4,22 @@ module.exports = {
     var employeeID = req.param('employeeID');
     var name = req.param('name');
     var callback = req.param('callback');
-
-    var newCallback = await Callback.create({
-      id: employeeID,
-      name: name,
-      callback: callback
-    }).fetch();
+    var applicationID = req.param('applicationID')
 
     var myData = {};
     var jsonData;
-    myData.message = "success! New add callback for " + newCallback.name;
-    myData.employeeID = newCallback.employeeID;
+    myData.applicationID = applicationID;
+    myData.employeeID = employeeID;
+    myData.name = name;
+    myData.callback = callback;
     jsonData = JSON.stringify(myData);
 
-    sails.log.info("success! New add callback for " + newCallback.name);
+    var newCallback = await Callback.create({
+      id: employeeID,
+      applicationID: applicationID,
+      name: name,
+      callback: callback
+    }).fetch();
 
     return res.json(jsonData);
   }
